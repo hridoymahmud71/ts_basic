@@ -6,7 +6,7 @@ const players = [];
 players.push(player_1);
 players.push(player_2);
 players.forEach((player) => {
-    console.log(player.play());
+    //console.log(player.play());
 });
 function drawRect(options) {
     let width = options.w;
@@ -14,3 +14,23 @@ function drawRect(options) {
 }
 let dim_3_options = { w: 5, h: 55, l: 55 };
 drawRect(dim_3_options);
+// ------------- Generics
+const addID = (o) => {
+    let id = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, o), { id });
+};
+let user = addID({
+    name: "Conor",
+    age: 33,
+    country: "US",
+});
+user.name = "Gonme";
+addID(user);
+const res_1 = {
+    status: 200,
+    type: "good",
+    data: {
+        name: "Abdul",
+        age: 34,
+    },
+};
